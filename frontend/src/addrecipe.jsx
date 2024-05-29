@@ -21,19 +21,40 @@ const AddRecipe = () => {
   };
 
   return (
-    <div>
-      <h2>Add/Edit Recipe</h2>
+    <div style={{ backgroundColor: "#0f1a2b", padding: "20px", color: "white", minHeight: "100vh" }}>
+      <h2 style={{ color: "#CDEEFD", marginBottom: "20px", fontSize:"20px" }}>Add/Edit Recipe</h2>
       <textarea
         value={recipe}
         onChange={(e) => setRecipe(e.target.value)}
-        rows="10"
-        cols="50"
-        style={{ padding: "10px", fontSize: "16px", borderRadius: "5px" }}
+        style={{
+          width: "100%", /* Mengatur textarea agar mengisi lebar jendela */
+          height: "80vh", /* Tinggi textarea sesuai dengan 80% tinggi viewport */
+          padding: "10px",
+          fontSize: "16px",
+          borderRadius: "5px",
+          backgroundColor: "lightskyblue",
+          color: "#0f1a2b", /* Warna teks */
+          border: "2px solid steelblue" /* Garis tepi */
+        }}
       />
       <br />
-      <button onClick={handleSaveRecipe} style={{ padding: "5px 10px", fontSize: "16px", backgroundColor: "navy", color: "white", border: "none", borderRadius: "5px" }}>Save</button>
+      <button
+        onClick={handleSaveRecipe}
+        style={{
+          padding: "10px 20px",
+          fontSize: "16px",
+          backgroundColor: "#003F88",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          marginTop: "10px" /* Jarak dari textarea */
+        }}
+      >
+        Save
+      </button>
     </div>
   );
+
 };
 
 export default AddRecipe;

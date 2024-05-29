@@ -40,27 +40,66 @@ const Recipe = () => {
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", backgroundColor: "#0f1a2b", minHeight: "100vh", color: "white" }}>
+    <div style={{ padding: "20px", backgroundColor: "#0f1a2b", minHeight: "100vh", color: "white" }}>
       <header style={{ marginBottom: "20px" }}>
-        <h1 style={{ color: "white", backgroundColor: "midnightblue", padding: "10px", borderRadius: "8px", textAlign: "center" }}>Tasty Spot</h1>
+        <h1 style={{ fontFamily:"EB Garamond", fontWeight:"bold", fontSize:"40px", color: "#CDEEFD", padding: "10px", borderRadius: "8px", textAlign: "center" }}>TASTY SPOT</h1>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "10vh" }}>
-          <Link to="/" style={{ marginRight: "10px", color: "white", backgroundColor: "navy", padding: "10px 30px", borderRadius: "5px", textDecoration: "none" }}>
-            Home
+          <Link to="/recipe" style={{
+            marginRight: "10px",
+            color: "white",
+            backgroundColor: "#003F88",
+            padding: "10px 30px",
+            borderRadius: "5px",
+            textDecoration: "none",
+            transition: "background-color 0.3s ease", 
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.backgroundColor = "steelblue"; 
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.backgroundColor = "#003F88"; 
+          }}>
+          Profile
           </Link>
-          <Link to="/contact" style={{ marginLeft: "10px", color: "white", backgroundColor: "navy", padding: "10px 30px", borderRadius: "5px", textDecoration: "none" }}>
+          <Link to="/contact" style={{
+            marginRight: "10px",
+            color: "white",
+            backgroundColor: "#003F88",
+            padding: "10px 30px",
+            borderRadius: "5px",
+            textDecoration: "none",
+            transition: "background-color 0.3s ease", 
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.backgroundColor = "steelblue"; 
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.backgroundColor = "#003F88"; 
+          }}>
             Contact
           </Link>
         </div>
       </header>
       <main>
         <div style={{ marginBottom: "20px" }}>
-          <h2>Add a New Recommendation</h2>
+          <h2 style={{ color: "#CDEEFD", marginBottom: "7px" }}>Add a New Recommendation</h2>
           <input
             type="text"
-            placeholder="Enter description"
+            placeholder="Enter the name of the food"
             value={newRecommendation}
             onChange={(e) => setNewRecommendation(e.target.value)}
-            style={{ marginRight: "10px", padding: "5px", fontSize: "16px", borderRadius: "5px" }}
+            style={{
+              marginRight: "10px",
+              padding: "10px",
+              fontSize: "16px",
+              borderRadius: "5px",
+              color: "#333",
+              backgroundColor: "#fff", 
+              border: "1px solid #ccc",
+              boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", 
+              transition: "box-shadow 0.3s ease", 
+              width: "215px"
+            }}
           />
           <input
             type="file"
@@ -69,25 +108,51 @@ const Recipe = () => {
             style={{ display: "none" }}
             id="fileInput"
           />
-          <label htmlFor="fileInput" style={{ marginRight: "10px", padding: "5px 10px", fontSize: "16px", backgroundColor: "navy", color: "white", border: "none", borderRadius: "5px", cursor: "pointer" }}>
-            Choose File
+          <label htmlFor="fileInput" style={{
+            marginRight: "10px",
+            padding: "5px 10px",
+            fontSize: "16px",
+            backgroundColor: "#003F88",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+            transition: "background-color 0.3s ease", 
+          }}
+          onMouseEnter={(e) => e.target.style.backgroundColor = 'steelblue'} 
+          onMouseLeave={(e) => e.target.style.backgroundColor = '#003F88'} 
+          >
+          Choose Photo
           </label>
-          <button onClick={handleAddRecommendation} style={{ padding: "5px 10px", fontSize: "16px", backgroundColor: "navy", color: "white", border: "none", borderRadius: "5px" }}>Add</button>
-        </div>
+          <button onClick={handleAddRecommendation} style={{
+            padding: "5px 10px",
+            fontSize: "16px",
+            backgroundColor: "#003F88",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+            transition: "background-color 0.3s ease",
+          }}
+          onMouseEnter={(e) => e.target.style.backgroundColor = 'steelblue'} 
+          onMouseLeave={(e) => e.target.style.backgroundColor = '#003F88'}
+          >
+          Add</button>
+          </div>
         <div>
-          <h2>Recommendations</h2>
+        <h2 style={{ color: "#CDEEFD" }}>Recommendations</h2>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             {recommendations.map((rec) => (
               <div key={rec.id} style={{ border: "1px solid #ccc", borderRadius: "8px", padding: "10px", margin: "10px", width: "350px", backgroundColor: "lightskyblue", color: "black" }}>
                 <img src={`http://localhost:3000${rec.image}`} alt={rec.description} style={{ width: "100%", borderRadius: "8px" }} />
-                <p>{rec.description}</p>
-                <Link to={`/addrecipe/${rec.id}`} style={{ display: "block", marginBottom: "10px", padding: "5px 10px", fontSize: "16px", backgroundColor: "steelblue", color: "white", border: "none", borderRadius: "5px", textAlign: "center", textDecoration: "none" }}>
+                <p style={{ color: "midnightblue", fontWeight: "bold", marginBottom: "10px", marginTop: "10px", fontSize: "23px", textAlign: "center" }}>{rec.description}</p>
+                <Link to={`/addrecipe/${rec.id}`} style={{ display: "block", marginBottom: "7px", padding: "5px 10px", fontSize: "16px", backgroundColor: "steelblue", color: "white", border: "none", borderRadius: "5px", textAlign: "center", textDecoration: "none" }}>
                   Add Recipe
                 </Link>
-                <Link to={`/viewrecipe/${rec.id}`} style={{ display: "block", marginBottom: "10px", padding: "5px 10px", fontSize: "16px", backgroundColor: "steelblue", color: "white", border: "none", borderRadius: "5px", textAlign: "center", textDecoration: "none" }}>
+                <Link to={`/viewrecipe/${rec.id}`} style={{ display: "block", marginBottom: "7px", padding: "5px 10px", fontSize: "16px", backgroundColor: "steelblue", color: "white", border: "none", borderRadius: "5px", textAlign: "center", textDecoration: "none" }}>
                   View Recipe
                 </Link>
-                <button onClick={() => handleDeleteRecommendation(rec.id)} style={{ padding: "5px 10px", fontSize: "16px", backgroundColor: "cadetblue", color: "white", border: "none", borderRadius: "5px" }}>Delete</button>
+                <button onClick={() => handleDeleteRecommendation(rec.id)} style={{ padding: "5px 10px", fontSize: "16px", backgroundColor: "#003F88", color: "white", border: "none", borderRadius: "5px" }}>Delete</button>
               </div>
             ))}
           </div>

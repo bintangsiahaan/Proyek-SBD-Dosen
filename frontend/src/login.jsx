@@ -29,9 +29,9 @@ const Login = () => {
   };
 
   return (
-      <div className="login-container">
-      <h1 className="page-title1">Welcome to</h1>
-      <h1 className="page-title2">TASTY SPOT</h1>
+    <div className="login-container">
+      <h1 className="page-title1" style={{ color: '#CDEEFD' }}>Welcome to</h1>
+      <h1 className="page-title2" style={{ color: '#CDEEFD' }}>TASTY SPOT</h1>
       <form className="login-form" onSubmit={handleSubmit}>
         <h2 className="login-title">LOGIN</h2>
         <div className="form-group">

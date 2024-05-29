@@ -4,29 +4,29 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #622A0F; 
+  background-color: #0f1a2b; 
 }
 
 .page-title1 {
   font-size: 45px;
   font-family: 'EB Garamond';
-  color: #F5DEB3;
+  color: white;
   text-align: center;
-}
+} 
 
 .page-title2 {
   font-size: 55px;
   font-family: 'EB Garamond';
   font-weight: bold;
-  color: #F5DEB3;
+  color: white;
   text-align: center;
 }
 
 .login-form {
-  background-color: #F5DEB3;
+  background-color: lightskyblue;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgb(156, 76, 11); 
+  box-shadow: 0 0 10px rgb(143, 212, 244); 
   width: 100%;
   max-width: 350px;
   text-align: center;
@@ -37,11 +37,11 @@
   font-size: 25px;
   font-family: 'EB Garamond';
   font-weight: bold;
-  color: #622A0F;
+  color: white;
 }
 
 .login-form h2 {
-  color: #5d4037; 
+  color: midnightblue; 
   margin-bottom: 30px;
 }
 
@@ -53,19 +53,19 @@
 
 .form-group label {
   margin-bottom: 5px;
-  color: #622A0F; 
+  color: midnightblue; 
 }
 
 .form-group input {
   width: 100%; 
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #038ae5;
   border-radius: 4px;
 }
 
 .button {
-    background-color: #622A0F; 
+    background-color: midnightblue; 
     color: white;
     border: none;
     padding: 12px 20px;
@@ -76,7 +76,7 @@
 }
 
 .button:hover {
-  background-color: #A57E57;
+  background-color: steelblue;
 }
 
 .signup-link {
@@ -86,6 +86,7 @@
 
 .signup-link p {
   font-size: 14px;
+  color: midnightblue
 }
 
 .signup-link a {

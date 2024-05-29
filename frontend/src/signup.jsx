@@ -41,8 +41,8 @@ const SignUp = () => {
 
   return (
     <div className="signup-container">
-      <h1 className="page-title1">Welcome to</h1>
-      <h1 className="page-title2">TASTY SPOT</h1>
+      <h1 className="page-title1" style={{ color: '#CDEEFD' }}>Welcome to</h1>
+      <h1 className="page-title2" style={{ color: '#CDEEFD' }}>TASTY SPOT</h1>
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2 className="signup-title">Sign Up</h2>
         <div className="input-group">
